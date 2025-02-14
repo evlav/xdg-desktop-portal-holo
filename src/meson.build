@@ -38,10 +38,17 @@ endif
 xdg_desktop_portal_dep = dependency('xdg-desktop-portal', version: '>= 1.17.0')
 
 desktop_portal_interfaces_dir = xdg_desktop_portal_dep.get_variable(pkgconfig: 'interfaces_dir')
+
+# Additional interfaces
+desktop_portal_interfaces += [
+  'org.freedesktop.impl.portal.Request',
+]
+
 desktop_portal_interfaces_files = []
 foreach intf: desktop_portal_interfaces
   desktop_portal_interfaces_files += [desktop_portal_interfaces_dir / '@0@.xml'.format(intf)]
 endforeach
+
 
 built_sources = []
 
@@ -70,6 +77,7 @@ deps = [
 
 sources = [
   'lockdown.c',
+  'request.c',
   'settings.c',
   'utils.c',
 
