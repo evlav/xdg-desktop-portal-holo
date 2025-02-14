@@ -1,0 +1,33 @@
+version = 1
+SPDX-PackageName = "xdg-desktop-portal-holo"
+SPDX-PackageSupplier = "Igalia S.L."
+
+[[annotations]]
+path = ["meson.build", "meson.options", "data/meson.build", "src/meson.build"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Igalia S.L."
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = "data/holo.portal.in"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Igalia S.L."
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = ["data/lockdown.conf", "data/settings.conf"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Igalia S.L."
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = ["data/xdg-desktop-portal-holo.desktop.in", "data/xdg-desktop-portal-holo.service.in"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Igalia S.L."
+SPDX-License-Identifier = "LGPL-2.1-or-later"
+
+[[annotations]]
+path = ["doc/xdg-desktop-portal-holo-lockdown.rst", "doc/xdg-desktop-portal-holo-settings.rst"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Igalia S.L."
+SPDX-License-Identifier = "LGPL-2.1-or-later"
