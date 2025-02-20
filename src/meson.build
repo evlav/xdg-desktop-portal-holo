@@ -76,6 +76,7 @@ deps = [
 ]
 
 sources = [
+  'appchooser.c',
   'lockdown.c',
   'request.c',
   'settings.c',

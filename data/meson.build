@@ -1,4 +1,5 @@
 desktop_portal_interfaces = [
+  'org.freedesktop.impl.portal.AppChooser',
   'org.freedesktop.impl.portal.Lockdown',
   'org.freedesktop.impl.portal.Settings',
 ]

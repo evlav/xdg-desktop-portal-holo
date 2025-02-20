@@ -5,6 +5,7 @@
 
 #include "config.h"
 
+#include "appchooser.h"
 #include "lockdown.h"
 #include "settings.h"
 
@@ -65,6 +66,12 @@ on_bus_acquired (GDBusConnection *bus,
                  gpointer user_data G_GNUC_UNUSED)
 {
   g_autoptr (GError) error = NULL;
+
+  if (!app_chooser_init (bus, &error))
+    {
+      print_warning ("Unable to initialize appchooser interface: %s", error->message);
+      g_clear_error (&error);
+    }
 
   if (!lockdown_init (bus, &error))
     {
