@@ -1,6 +1,6 @@
 .. _xdg-desktop-portal-holo-lockdown(5):
 .. meta::
-   :copyright: 2025  Igalia S.L.
+   :copyright: 2025 Valve Corporation
 
 
 ================================

@@ -1,6 +1,6 @@
 // appchooser.c: org.freedesktop.impl.portal.AppChooser
 //
-// SPDX-FileCopyrightText: 2025 Igalia S.L.
+// SPDX-FileCopyrightText: 2025 Valve Corporation
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "config.h"

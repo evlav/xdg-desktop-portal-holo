@@ -1,6 +1,6 @@
 // utils.h: Utility functions
 //
-// SPDX-FileCopyrightText: 2024  Igalia S.L.
+// SPDX-FileCopyrightText: 2024 Valve Corporation
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #pragma once

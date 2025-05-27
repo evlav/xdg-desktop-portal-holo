@@ -1,6 +1,6 @@
 .. _xdg-desktop-portal-holo-settings(5):
 .. meta::
-   :copyright: 2025  Igalia S.L.
+   :copyright: 2025 Valve Corporation
 
 
 ================================
