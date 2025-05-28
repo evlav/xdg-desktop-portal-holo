@@ -23,7 +23,7 @@ $ meson install -C _build --no-rebuild
 
 Original code for xdg-desktop-portal-holo is published under the [3-Clause BSD license](LICENSES/BSD-3-Clause.txt).
 
-This project includes copies of `request.{h,c}` which are published under the [GNU Lesser General Public License version 2 or later](LICENSES/LGPL-2.1-or-later.txt).
+This project includes copies of `request.{h,c}` (from [xdg-desktop-portal-gtk](https://github.com/flatpak/xdg-desktop-portal-gtk)) which are published under the [GNU Lesser General Public License version 2 or later](LICENSES/LGPL-2.1-or-later.txt).
 
 The aggregate of all sources is therefore published under the [GNU Lesser General Public License version 2.1 or later](LICENSES/LGPL-2.1-or-later.txt).
 
