@@ -1,7 +1,7 @@
 // xdg-desktop-portal-holo.c: Main
 //
-// SPDX-FileCopyrightText: 2024 Valve Corporation
-// SPDX-License-Identifier: LGPL-2.1-or-later
+// SPDX-FileCopyrightText: 2024-2025 Valve Corporation
+// SPDX-License-Identifier: BSD-3-Clause
 
 #include "config.h"
 

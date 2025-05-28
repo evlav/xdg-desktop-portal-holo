@@ -6,28 +6,28 @@ SPDX-PackageSupplier = "Igalia S.L."
 path = ["meson.build", "meson.options", "data/meson.build", "src/meson.build"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024-2025 Valve Corporation"
-SPDX-License-Identifier = "LGPL-2.1-or-later"
+SPDX-License-Identifier = "BSD-3-Clause"
 
 [[annotations]]
 path = "data/holo.portal.in"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024-2025 Valve Corporation"
-SPDX-License-Identifier = "LGPL-2.1-or-later"
+SPDX-License-Identifier = "BSD-3-Clause"
 
 [[annotations]]
 path = ["data/lockdown.conf", "data/settings.conf"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Valve Corporation"
-SPDX-License-Identifier = "LGPL-2.1-or-later"
+SPDX-License-Identifier = "BSD-3-Clause"
 
 [[annotations]]
 path = ["data/xdg-desktop-portal-holo.desktop.in", "data/xdg-desktop-portal-holo.service.in"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Valve Corporation"
-SPDX-License-Identifier = "LGPL-2.1-or-later"
+SPDX-License-Identifier = "BSD-3-Clause"
 
 [[annotations]]
 path = ["doc/xdg-desktop-portal-holo-lockdown.rst", "doc/xdg-desktop-portal-holo-settings.rst"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 Valve Corporation"
-SPDX-License-Identifier = "LGPL-2.1-or-later"
+SPDX-License-Identifier = "BSD-3-Clause"

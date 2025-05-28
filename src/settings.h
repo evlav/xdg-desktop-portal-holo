@@ -1,7 +1,7 @@
 // settings.h: org.freedesktop.impl.portal.Settings
 //
 // SPDX-FileCopyrightText: 2024 Valve Corporation
-// SPDX-License-Identifier: LGPL-2.1-or-later
+// SPDX-License-Identifier: BSD-3-Clause
 
 #include <gio/gio.h>
 #include <stdbool.h>
