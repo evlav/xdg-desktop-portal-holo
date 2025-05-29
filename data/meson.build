@@ -4,15 +4,19 @@ desktop_portal_interfaces = [
   'org.freedesktop.impl.portal.Settings',
 ]
 
-portal_dir = datadir / 'xdg-desktop-portal' / 'portals'
-
 libexecdir_conf = configuration_data()
 libexecdir_conf.set('libexecdir', prefix / libexecdir)
 
 holo_portal_conf = configuration_data()
 holo_portal_conf.set('PORTALS', ';'.join(desktop_portal_interfaces))
 
-portal_dir = datadir / 'xdg-desktop-portal' / 'portals'
+# Special place where only the data files for the holo and gamescope portals
+# will be installed (holo.portal, gamescope.portal and gamescope-portals.conf).
+# The /usr/bin/start-gamescope-session script makes the
+# $XDG_DESKTOP_PORTAL_DIR environment variable point to that place to ensure
+# that no other portals are found.
+portal_dir = datadir / 'xdg-desktop-portal' / 'gamescope-portals'
+
 configure_file(
   input: 'holo.portal.in',
   output: 'holo.portal',
