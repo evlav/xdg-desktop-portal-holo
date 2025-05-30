@@ -59,5 +59,5 @@ install_data([
     'lockdown.conf',
     'settings.conf',
   ],
-  install_dir: sysconfdir / 'xdg' / 'Holo',
+  install_dir: sysconfdir / 'xdg' / 'SteamOS' / 'portal',
 )
