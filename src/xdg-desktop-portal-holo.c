@@ -6,6 +6,7 @@
 #include "config.h"
 
 #include "appchooser.h"
+#include "email.h"
 #include "lockdown.h"
 #include "settings.h"
 
@@ -70,6 +71,12 @@ on_bus_acquired (GDBusConnection *bus,
   if (!app_chooser_init (bus, &error))
     {
       print_warning ("Unable to initialize appchooser interface: %s", error->message);
+      g_clear_error (&error);
+    }
+
+  if (!email_init (bus, &error))
+    {
+      print_warning ("Unable to initialize email interface: %s", error->message);
       g_clear_error (&error);
     }
 
