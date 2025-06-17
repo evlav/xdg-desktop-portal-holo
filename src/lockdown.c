@@ -1,6 +1,6 @@
 // lockdown.c: org.freedesktop.impl.portal.Lockdown
 //
-// SPDX-FileCopyrightText: 2024 Valve Corporation
+// SPDX-FileCopyrightText: 2024-2025 Valve Corporation
 // SPDX-License-Identifier: BSD-3-Clause
 
 #include "config.h"
@@ -11,8 +11,6 @@
 #include "xdg-desktop-portal-dbus.h"
 
 #include <string.h>
-
-#define I_(str)         g_intern_static_string ((str))
 
 #define LOCKDOWN_GROUP  "Lockdown"
 #define PRIVACY_GROUP   "Privacy"

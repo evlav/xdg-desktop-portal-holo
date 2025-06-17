@@ -1,6 +1,6 @@
 // utils.c: Utility functions
 //
-// SPDX-FileCopyrightText: 2024 Valve Corporation
+// SPDX-FileCopyrightText: 2024-2025 Valve Corporation
 // SPDX-License-Identifier: BSD-3-Clause
 
 #include "config.h"
@@ -12,6 +12,7 @@
 #include <unistd.h>
 
 #include <gio/gio.h>
+#include <gio/gdesktopappinfo.h>
 
 typedef enum {
   MESSAGE_TYPE_INFO,
@@ -111,6 +112,14 @@ xdg_desktop_portal_error_quark (void)
                                       xdg_desktop_portal_error_entries,
                                       G_N_ELEMENTS (xdg_desktop_portal_error_entries));
   return (GQuark) quark_volatile;
+}
+
+GAppInfo *get_steam_uri_helper ()
+{
+  GAppInfo *info = G_APP_INFO (g_desktop_app_info_new (I_("steam_http_loader.desktop")));
+  if (!info)
+    g_warning ("Unable to locate Steam helper to open files");
+  return info;
 }
 
 // Copied from xdg-desktop-portal

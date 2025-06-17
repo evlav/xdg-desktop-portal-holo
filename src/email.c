@@ -11,10 +11,6 @@
 #include "utils.h"
 #include "xdg-desktop-portal-dbus.h"
 
-#include <gio/gdesktopappinfo.h>
-
-#define I_(str) g_intern_static_string ((str))
-
 static bool
 handle_compose_email (XdpImplEmail *object,
                       GDBusMethodInvocation *invocation,
@@ -28,12 +24,9 @@ handle_compose_email (XdpImplEmail *object,
   g_object_ref (request);
 
   guint response = 0;
-  g_autoptr(GAppInfo) info = G_APP_INFO (g_desktop_app_info_new (I_("steam_http_loader.desktop")));
+  g_autoptr(GAppInfo) info = get_steam_uri_helper ();
   if (!info)
-    {
-      response = 2;
-      g_warning ("Unable to locate Steam helper to open files");
-    }
+    response = 2;
   else
     {
       const char *address = NULL;

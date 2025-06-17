@@ -11,10 +11,6 @@
 #include "utils.h"
 #include "xdg-desktop-portal-dbus.h"
 
-#include <gio/gdesktopappinfo.h>
-
-#define I_(str) g_intern_static_string ((str))
-
 static bool
 handle_choose_application (XdpImplAppChooser *object,
                            GDBusMethodInvocation *invocation,
@@ -37,12 +33,9 @@ handle_choose_application (XdpImplAppChooser *object,
   GVariantBuilder opt_builder;
   g_variant_builder_init (&opt_builder, G_VARIANT_TYPE_VARDICT);
 
-  g_autoptr(GAppInfo) info = G_APP_INFO (g_desktop_app_info_new (I_("steam_http_loader.desktop")));
+  g_autoptr(GAppInfo) info = get_steam_uri_helper ();
   if (!info)
-    {
-      response = 2;
-      g_warning ("Unable to locate Steam helper to open files");
-    }
+    response = 2;
   else
     {
       g_autofree char *app_id = xdp_get_app_id_from_desktop_id (g_app_info_get_id (info));

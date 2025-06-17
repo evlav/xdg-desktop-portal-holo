@@ -1,14 +1,17 @@
 // utils.h: Utility functions
 //
-// SPDX-FileCopyrightText: 2024 Valve Corporation
+// SPDX-FileCopyrightText: 2024-2025 Valve Corporation
 // SPDX-License-Identifier: BSD-3-Clause
 
 #pragma once
 
 #include <glib.h>
+#include <gio/gio.h>
 
 #define DESKTOP_PORTAL_OBJECT_PATH "/org/freedesktop/portal/desktop"
 #define DESKTOP_PORTAL_NAME_STEAM "org.freedesktop.impl.portal.desktop.holo"
+
+#define I_(str) g_intern_static_string ((str))
 
 G_BEGIN_DECLS
 
@@ -37,6 +40,8 @@ print_warning (const char *fmt,
 void
 print_info (const char *fmt,
             ...);
+
+GAppInfo *get_steam_uri_helper (void);
 
 char *xdp_get_app_id_from_desktop_id (const char *desktop_id);
 
