@@ -38,4 +38,6 @@ void
 print_info (const char *fmt,
             ...);
 
+char *xdp_get_app_id_from_desktop_id (const char *desktop_id);
+
 G_END_DECLS

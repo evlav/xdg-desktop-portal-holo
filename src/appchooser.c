@@ -33,26 +33,26 @@ handle_choose_application (XdpImplAppChooser *object,
   // duration of the user interaction. There is no user interaction here.
   request_unexport (request);
 
-  // Sanity check: verify that the Steam helper application exists
-  // and can be located by its desktop file.
+  guint response = 0;
+  GVariantBuilder opt_builder;
+  g_variant_builder_init (&opt_builder, G_VARIANT_TYPE_VARDICT);
+
   g_autoptr(GAppInfo) info = G_APP_INFO (g_desktop_app_info_new (I_("steam_http_loader.desktop")));
   if (!info)
     {
-      g_dbus_method_invocation_return_error (invocation,
-                                             XDG_DESKTOP_PORTAL_ERROR,
-                                             XDG_DESKTOP_PORTAL_ERROR_FAILED,
-                                             "Unable to locate Steam helper to open files");
+      response = 2;
+      g_warning ("Unable to locate Steam helper to open files");
     }
   else
     {
-      GVariantBuilder opt_builder;
-      g_variant_builder_init (&opt_builder, G_VARIANT_TYPE_VARDICT);
-      g_variant_builder_add (&opt_builder, "{sv}", "choice", g_variant_new_string (I_("steam_http_loader")));
-      xdp_impl_app_chooser_complete_choose_application (object,
-                                                        invocation,
-                                                        0, // Success, the request is carried out
-                                                        g_variant_builder_end (&opt_builder));
+      g_autofree char *app_id = xdp_get_app_id_from_desktop_id (g_app_info_get_id (info));
+      g_variant_builder_add (&opt_builder, "{sv}", "choice", g_variant_new_string (app_id));
     }
+
+  xdp_impl_app_chooser_complete_choose_application (object,
+                                                    invocation,
+                                                    response,
+                                                    g_variant_builder_end (&opt_builder));
 
   g_object_unref (request);
 

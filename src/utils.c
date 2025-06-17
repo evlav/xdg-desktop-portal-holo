@@ -112,3 +112,15 @@ xdg_desktop_portal_error_quark (void)
                                       G_N_ELEMENTS (xdg_desktop_portal_error_entries));
   return (GQuark) quark_volatile;
 }
+
+// Copied from xdg-desktop-portal
+// (https://github.com/flatpak/xdg-desktop-portal/blob/522236e/src/xdp-utils.c#L346-L354)
+char *
+xdp_get_app_id_from_desktop_id (const char *desktop_id)
+{
+  const gchar *suffix = ".desktop";
+  if (g_str_has_suffix (desktop_id, suffix))
+    return g_strndup (desktop_id, strlen (desktop_id) - strlen (suffix));
+  else
+    return g_strdup (desktop_id);
+}
